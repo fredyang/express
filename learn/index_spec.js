@@ -1,10 +1,9 @@
 var request = require('supertest');
+var app = require('./index');
 
 describe('index', function () {
     it('should be ok', function (done) {
-       var app = require('./index');
-
         request(app).get('/')
-            .expect(200, done);
+            .expect(200, 'bye', done);
     });
 });
